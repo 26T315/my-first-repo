@@ -3,76 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>高松からディズニー2日間旅行プラン</title>
+
+<title>旅行プラン集</title>
 
 <style>
+
 body{
     margin:0;
-    font-family:Yu Gothic,sans-serif;
-    background:#f4f8ff;
-    color:#333;
+    font-family:"Yu Gothic",sans-serif;
+    background:#f2f8ff;
 }
 
 header{
-    background:#4aa3ff;
+    background:#4da6ff;
     color:white;
     text-align:center;
-    padding:30px;
+    padding:40px;
 }
 
-nav{
-    background:#0066cc;
-    padding:15px;
-    text-align:center;
+header h1{
+    margin:0;
+    font-size:45px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:20px;
-    font-weight:bold;
+header p{
+    font-size:20px;
 }
 
-section{
-    width:80%;
+main{
+    width:90%;
     margin:auto;
-    background:white;
-    margin-top:25px;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin-top:40px;
 }
 
-h2{
+.plan{
+    width:300px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 0 10px gray;
+    text-align:center;
+    margin:20px;
+    padding:20px;
+}
+
+.plan img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.plan h2{
     color:#0066cc;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
+.plan p{
+    line-height:1.6;
 }
 
-table,th,td{
-    border:1px solid #999;
-}
-
-th{
-    background:#66b3ff;
+.button{
+    display:inline-block;
+    background:#0066cc;
     color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
 }
 
-th,td{
-    padding:10px;
-    text-align:center;
+.button:hover{
+    background:#003f80;
 }
 
 footer{
+    margin-top:40px;
     background:#0066cc;
     color:white;
     text-align:center;
     padding:15px;
-    margin-top:30px;
 }
+
 </style>
 
 </head>
@@ -80,124 +93,76 @@ footer{
 <body>
 
 <header>
-<h1>高松からディズニー2日間旅行プラン</h1>
-<p>1日目：東京ディズニーランド　2日目：東京ディズニーシー</p>
+
+<h1>旅行プラン集</h1>
+
+<p>
+おすすめ旅行プランをご紹介します！
+</p>
+
 </header>
 
-<nav>
-<a href="#schedule">スケジュール</a>
-<a href="#land">ディズニーランド</a>
-<a href="#sea">ディズニーシー</a>
-<a href="#cost">予算</a>
-</nav>
+<main>
 
-<section id="schedule">
-<h2>旅行スケジュール</h2>
+<div class="plan">
 
-<table>
-<tr>
-<th>日程</th>
-<th>内容</th>
-</tr>
+<img src="korea.jpg" alt="韓国旅行">
 
-<tr>
-<td>1日目</td>
-<td>
-高松空港 出発<br>
-↓<br>
-羽田空港 到着<br>
-↓<br>
-東京ディズニーランド<br>
-↓<br>
-ホテル宿泊
-</td>
-</tr>
+<h2>韓国旅行</h2>
 
-<tr>
-<td>2日目</td>
-<td>
-ホテル出発<br>
-↓<br>
-東京ディズニーシー<br>
-↓<br>
-羽田空港<br>
-↓<br>
-高松空港
-</td>
-</tr>
+<p>
+ソウルの観光地や韓国グルメ、
+ショッピングを楽しむ2泊3日の旅行プランです。
+</p>
 
-</table>
-</section>
+<a href="korea.html" class="button">
+詳しく見る
+</a>
 
-<section id="land">
-<h2>1日目 東京ディズニーランド</h2>
+</div>
 
-<ul>
-<li>美女と野獣 "魔法のものがたり"</li>
-<li>ベイマックスのハッピーライド</li>
-<li>ビッグサンダー・マウンテン</li>
-<li>エレクトリカルパレード</li>
-<li>夜はホテルで宿泊</li>
-</ul>
+<div class="plan">
 
-</section>
+<img src="disney.jpg" alt="ディズニー旅行">
 
-<section id="sea">
+<h2>ディズニー旅行</h2>
 
-<h2>2日目 東京ディズニーシー</h2>
+<p>
+1日目は東京ディズニーランド、
+2日目は東京ディズニーシーを満喫するプランです。
+</p>
 
-<ul>
-<li>ソアリン：ファンタスティック・フライト</li>
-<li>トイ・ストーリー・マニア！</li>
-<li>センター・オブ・ジ・アース</li>
-<li>ファンタジースプリングス散策</li>
-<li>夜便で高松へ帰宅</li>
-</ul>
+<a href="disney.html" class="button">
+詳しく見る
+</a>
 
-</section>
+</div>
 
-<section id="cost">
+<div class="plan">
 
-<h2>予算（目安）</h2>
+<img src="osaka.jpg" alt="大阪旅行">
 
-<table>
+<h2>大阪旅行</h2>
 
-<tr>
-<th>項目</th>
-<th>金額</th>
-</tr>
+<p>
+大阪城・道頓堀・ユニバーサル・スタジオ・ジャパンなど
+人気スポットを巡る旅行プランです。
+</p>
 
-<tr>
-<td>往復航空券</td>
-<td>約25,000円</td>
-</tr>
+<a href="osaka.html" class="button">
+詳しく見る
+</a>
 
-<tr>
-<td>ホテル1泊</td>
-<td>約15,000円</td>
-</tr>
+</div>
 
-<tr>
-<td>パークチケット2日分</td>
-<td>約20,000円</td>
-</tr>
-
-<tr>
-<td>食事・お土産</td>
-<td>約15,000円</td>
-</tr>
-
-<tr>
-<th>合計</th>
-<th>約75,000円</th>
-</tr>
-
-</table>
-
-</section>
+</main>
 
 <footer>
-<p>© Disney Travel Plan From Takamatsu</p>
+
+<p>
+© 2026 旅行プラン集
+</p>
+
 </footer>
 
 </body>
