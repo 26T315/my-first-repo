@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高松からディズニー2日間旅行プラン</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Yu Gothic,sans-serif;
+    background:#f4f8ff;
+    color:#333;
+}
+
+header{
+    background:#4aa3ff;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+nav{
+    background:#0066cc;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:20px;
+    font-weight:bold;
+}
+
+section{
+    width:80%;
+    margin:auto;
+    background:white;
+    margin-top:25px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{
+    color:#0066cc;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table,th,td{
+    border:1px solid #999;
+}
+
+th{
+    background:#66b3ff;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+footer{
+    background:#0066cc;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>高松からディズニー2日間旅行プラン</h1>
+<p>1日目：東京ディズニーランド　2日目：東京ディズニーシー</p>
+</header>
+
+<nav>
+<a href="#schedule">スケジュール</a>
+<a href="#land">ディズニーランド</a>
+<a href="#sea">ディズニーシー</a>
+<a href="#cost">予算</a>
+</nav>
+
+<section id="schedule">
+<h2>旅行スケジュール</h2>
+
+<table>
+<tr>
+<th>日程</th>
+<th>内容</th>
+</tr>
+
+<tr>
+<td>1日目</td>
+<td>
+高松空港 出発<br>
+↓<br>
+羽田空港 到着<br>
+↓<br>
+東京ディズニーランド<br>
+↓<br>
+ホテル宿泊
+</td>
+</tr>
+
+<tr>
+<td>2日目</td>
+<td>
+ホテル出発<br>
+↓<br>
+東京ディズニーシー<br>
+↓<br>
+羽田空港<br>
+↓<br>
+高松空港
+</td>
+</tr>
+
+</table>
+</section>
+
+<section id="land">
+<h2>1日目 東京ディズニーランド</h2>
+
+<ul>
+<li>美女と野獣 "魔法のものがたり"</li>
+<li>ベイマックスのハッピーライド</li>
+<li>ビッグサンダー・マウンテン</li>
+<li>エレクトリカルパレード</li>
+<li>夜はホテルで宿泊</li>
+</ul>
+
+</section>
+
+<section id="sea">
+
+<h2>2日目 東京ディズニーシー</h2>
+
+<ul>
+<li>ソアリン：ファンタスティック・フライト</li>
+<li>トイ・ストーリー・マニア！</li>
+<li>センター・オブ・ジ・アース</li>
+<li>ファンタジースプリングス散策</li>
+<li>夜便で高松へ帰宅</li>
+</ul>
+
+</section>
+
+<section id="cost">
+
+<h2>予算（目安）</h2>
+
+<table>
+
+<tr>
+<th>項目</th>
+<th>金額</th>
+</tr>
+
+<tr>
+<td>往復航空券</td>
+<td>約25,000円</td>
+</tr>
+
+<tr>
+<td>ホテル1泊</td>
+<td>約15,000円</td>
+</tr>
+
+<tr>
+<td>パークチケット2日分</td>
+<td>約20,000円</td>
+</tr>
+
+<tr>
+<td>食事・お土産</td>
+<td>約15,000円</td>
+</tr>
+
+<tr>
+<th>合計</th>
+<th>約75,000円</th>
+</tr>
+
+</table>
+
+</section>
+
+<footer>
+<p>© Disney Travel Plan From Takamatsu</p>
+</footer>
+
+</body>
+</html>
