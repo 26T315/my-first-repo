@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大阪旅行プラン(高松発 1泊2日)</title>
+  <!-- Google Fontsの読み込み -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 全体設定 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ヘッダー */
+    .hero {
+      background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin: 10px 0 5px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* 確定重要ポイントカード */
+    .points-card {
+      background: #fff;
+      border-left: 5px solid #ff9800;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 35px;
+    }
+
+    .points-card h2 {
+      font-size: 1.1rem;
+      color: #e65100;
+      margin-bottom: 12px;
+    }
+
+    .points-card ul {
+      list-style: none;
+    }
+
+    .points-card li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      padding-left: 1.2em;
+      text-indent: -1.2em;
+    }
+
+    .points-card li::before {
+      content: "✔";
+      color: #ff9800;
+      margin-right: 8px;
+    }
+
+    /* 日程セクション */
+    .day-section {
+      margin-bottom: 50px;
+    }
+
+    .day-title {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+
+    .day-badge {
+      background: #0052d4;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .day-badge.day2 {
+      background: #e91e63;
+    }
+
+    /* タイムライン構造 */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    /* タイムラインの縦線 */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 110px;
+      top: 10px;
+      bottom: 10px;
+      width: 3px;
+      background: #cbd5e1;
+    }
+
+    .timeline-item {
+      display: flex;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .time {
+      width: 100px;
+      font-weight: 700;
+      color: #0052d4;
+      font-size: 0.9rem;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .content {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      flex-grow: 1;
+      margin-left: 25px;
+      position: relative;
+    }
+
+    /* タイムライン上のドット */
+    .content::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 20px;
+      width: 11px;
+      height: 11px;
+      background: #fff;
+      border: 3px solid #0052d4;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .content h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #1e293b;
+    }
+
+    .content p {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    /* 画像用スタイル */
+    .spot-img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-top: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* 特別な装飾用クラス */
+    .transport {
+      color: #2563eb;
+      font-weight: 500;
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 4px 0;
+    }
+
+    .yutori-note {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin: 4px 0;
+    }
+
+    .highlight-text {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .alert-note {
+      color: #dc2626;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+
+    /* スマホ対応（レスポンシブ化） */
+    @media (max-width: 600px) {
+      .timeline::before {
+        left: 8px;
+      }
+      
+      .timeline-item {
+        flex-direction: column;
+        padding-left: 15px;
+      }
+
+      .time {
+        width: auto;
+        margin-bottom: 4px;
+      }
+
+      .content {
+        margin-left: 10px;
+      }
+
+      .content::before {
+        left: -22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">高松発 1泊2日モデルコース</span>
+      <h1>大阪旅行プラン</h1>
+      <p class="subtitle">〜確定ルート・移動ゆとり20分確保プラン〜</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 重要ポイントカード -->
+    <section class="points-card">
+      <h2>📌 このプランの確定重要ポイント</h2>
+      <ul>
+        <li><strong>1日目ランチ:</strong> 混雑前の11:00に「道頓堀」で確定</li>
+        <li><strong>宿泊ホテル:</strong> パークまで徒歩1分の「ザ パーク フロント ホテル」で確定</li>
+        <li><strong>安心設計:</strong> 全ての主要な乗り換えで「20分以上」のゆとり時間を確保</li>
+      </ul>
+    </section>
+
+    <!-- 1日目 -->
+    <section class="day-section">
+      <h2 class="day-title"><span class="day-badge">1日目</span> 高松から大阪へ & 大阪市内観光</h2>
+      
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="time">06:08</div>
+          <div class="content">
+            <h3>高松駅 出発</h3>
+            <p class="transport">【JR】快速マリンライナー6号 (岡山行) に乗車</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">07:04</div>
+          <div class="content">
+            <h3>岡山駅 到着</h3>
+            <div class="yutori-note">※乗り換えゆとり時間: 21分</div>
+            <p>新幹線乗り換え口へゆったり移動できます。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">07:25</div>
+          <div class="content">
+            <h3>岡山駅 出発</h3>
+            <p class="transport">【新幹線】のぞみ78号 (東京行) に乗車</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">08:13</div>
+          <div class="content">
+            <h3>新大阪駅 到着</h3>
+            <div class="yutori-note">※乗り換えゆとり時間: 22分</div>
+            <p>新幹線からJR在来線の乗り換えホームへ移動します。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">08:35</div>
+          <div class="content">
+            <h3>新大阪駅 出発</h3>
+            <p class="transport">【JR】京都線 (普通または快速・大阪方面行) に乗車</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">08:40</div>
+          <div class="content">
+            <h3>大阪駅 到着</h3>
+            <p class="highlight-text">【確定】大阪駅に到着！</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">09:00 - 09:15</div>
+          <div class="content">
+            <h3>大阪駅 → ユニバーサルシティ駅</h3>
+            <p class="transport">【JR在来線】でホテルへ直行します。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">09:15 - 10:15</div>
+          <div class="content">
+            <h3>ザ パーク フロント ホテル</h3>
+            <p class="highlight-text">【確定ホテル】チェックイン前に荷物を預ける</p>
+            <p>これでここからは完全身軽で観光できます。</p>
+            <img src="hotel.jpg" alt="ザ パーク フロント ホテル" class="spot-img">
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">10:20 - 10:50</div>
+          <div class="content">
+            <h3>ユニバーサルシティ駅 → 大阪難波駅</h3>
+            <p class="transport">【JR・阪神線】西九条乗り換えでミナミ(難波)へ移動</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">11:00 - 13:30</div>
+          <div class="content">
+            <h3>道頓堀エリア</h3>
+            <p class="highlight-text">【確定】道頓堀でランチ & 散策</p>
+            <p>お好み焼きや串カツ、たこ焼きなどを堪能。グリコ前で記念撮影！</p>
+            <img src="dotonbori.jpg" alt="道頓堀 グリコ看板" class="spot-img">
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">13:30 - 13:45</div>
+          <div class="content">
+            <h3>なんば駅 → 天王寺駅</h3>
+            <p class="transport">【地下鉄御堂筋線】で移動 (乗車時間: 約6分)</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">13:45 - 16:30</div>
+          <div class="content">
+            <h3>あべのハルカス</h3>
+            <p>日本屈指の高層ビル。展望台からの絶景やショッピングを楽しみます。</p>
+            <img src="harukas.jpg" alt="あべのハルカス" class="spot-img">
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">16:30 - 16:50</div>
+          <div class="content">
+            <h3>天王寺駅 → 梅田駅</h3>
+            <p class="transport">【地下鉄御堂筋線】でキタ(梅田)へ移動 (乗車時間: 約15分)</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">16:50 - 19:15</div>
+          <div class="content">
+            <h3>梅田 (大阪駅周辺)</h3>
+            <p>グランフロント大阪やルクアでショッピング & 少し早めのディナー。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">19:15 - 19:30</div>
+          <div class="content">
+            <h3>大阪駅 → ユニバーサルシティ駅</h3>
+            <p class="transport">【JR在来線】でホテルへ帰還します。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">19:30 -</div>
+          <div class="content">
+            <h3>ホテルチェックイン</h3>
+            <p>ホテルに正式チェックイン。翌日のUSJに備えて早めに就寝！</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2日目 -->
+    <section class="day-section">
+      <h2 class="day-title"><span class="day-badge day2">2日目</span> 終日ユニバーサル・スタジオ・ジャパン (USJ) → 高松へ</h2>
+      
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="time">07:00</div>
+          <div class="content">
+            <h3>ホテル出発</h3>
+            <p>パークのメインゲートへ (徒歩1分！)</p>
+            <p class="note">※公式開園時間より早く開くことが多いため早めの整列が鉄則です。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">07:45 - 21:00</div>
+          <div class="content">
+            <h3>USJ (パーク内)</h3>
+            <p>朝から晩まで全力で満喫！</p>
+            <p>人気アトラクション、エリア、パレード、夜のショーまで遊び尽くします。</p>
+            <!-- USJの写真をグリッド並びで配置 -->
+            <div class="gallery-grid">
+              <img src="mario.jpg" alt="スーパー・ニンテンドー・ワールド">
+              <img src="harrypotter.jpg" alt="ホグワーツ城">
+              <img src="mels.jpg" alt="メルズ・ドライブイン">
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">21:00 - 21:20</div>
+          <div class="content">
+            <h3>ホテル → 駅</h3>
+            <p>閉園後、ホテルで預けた荷物を素早くピックアップして駅へ向かいます。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">21:25</div>
+          <div class="content">
+            <h3>ユニバーサルシティ駅 発</h3>
+            <p class="transport">【JR】ゆめ咲線・環状線 (大阪方面行) に乗車</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">21:40</div>
+          <div class="content">
+            <h3>大阪駅 到着</h3>
+            <div class="yutori-note">※乗り換えゆとり時間: 20分</div>
+            <p>大阪駅から新大阪行きのホームへ移動します。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">22:00</div>
+          <div class="content">
+            <h3>大阪駅 出発</h3>
+            <p class="transport">【JR】京都線 (新大阪方面行) に乗車</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">22:05</div>
+          <div class="content">
+            <h3>新大阪駅 到着</h3>
+            <div class="yutori-note">※乗り換えゆとり時間: 28分</div>
+            <p>新幹線の最終便に向け、駅弁や飲み物、お土産を買うゆとりがあります。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">22:33</div>
+          <div class="content">
+            <h3>新大阪駅 出発</h3>
+            <p class="transport">【新幹線】のぞみ91号 (岡山行) に乗車</p>
+            <p class="alert-note">※岡山へ向かう新幹線の最終便です！</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">23:18</div>
+          <div class="content">
+            <h3>岡山駅 到着</h3>
+            <div class="yutori-note">※乗り換えゆとり時間: 29分</div>
+            <p>新幹線ホームから、四国方面のマリンライナーホームへ移動します。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">23:47</div>
+          <div class="content">
+            <h3>岡山駅 出発</h3>
+            <p class="transport">【JR】快速マリンライナー75号 (高松行) に乗車</p>
+            <p class="alert-note">※高松へ帰れる最終列車です！</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="time">00:53</div>
+          <div class="content">
+            <h3>高松駅 到着</h3>
+            <p class="highlight-text">高松駅に到着！お疲れ様でした！</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+<p style="text-align:center;">
+    <a href="top.html" class="back">← トップページへ戻る</a>
+</p>
+
+  <footer>
+    <p>Osaka Trip Plan - Takamatsu Departure</p>
+  </footer>
+
+</body>
+</html>
